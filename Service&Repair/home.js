@@ -1,121 +1,44 @@
-<!DOCTYPE html>
-<html>
+import React, { useState } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Carousel from 'react-bootstrap/Carousel';
+import professional from '../assets/slider-img.png';
+import about from '../assets/about-img.jpg';
+import maintain from '../assets/s1.png';
+import eletrical from '../assets/s2.png';
+import plumbing from '../assets/s3.png';
+import clint1 from '../assets/client-1.jpg';
+import client2 from '../assets/client-2.jpg';
+import '../App.css';
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+const Home = () => {
+  const [index, setIndex] = useState(0);
 
-  <title>Inance</title>
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- font awesome style -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  return (
+    <>
+      <Container className="my-5 home-background">
+        <Row className="align-items-center">
+          <Col md={6}>
+            <h2 className="fw-bold">Repair and Maintenance Service</h2>
+            <p>
+              We provide high-quality services with a professional team.
+              Our goal is to ensure customer satisfaction with every project.
+            </p>
+            <Link to="/contact" style={{ textDecoration: 'none' }}>
+              <button className="fill">Contact</button>
+            </Link>
+          </Col>
+          <Col md={6}>
+            <img src={professional} alt="Home" className="img-fluid rounded" />
+          </Col>
+        </Row>
+      </Container>
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-</head>
-
-<body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid">
-          <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +01 123455678990
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                Email : demo@gmail.com
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
-              <span>
-                Inance
-              </span>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="detail-box">
-              <h1>
-                Repair and <br>
-                Maintenance <br>
-                Services
-              </h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui harum voluptatem adipisci. Quos molestiae saepe dicta nobis pariatur, tempora iusto, ad possimus soluta hic praesentium mollitia consequatur beatae, aspernatur culpa.
-              </p>
-              <a href="">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="img-box">
-              <img src="images/slider-img.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
-
-  <!-- feature section -->
-  <section class="feature_section">
+      <section class="feature_section">
     <div class="container">
       <div class="feature_container">
         <div class="box">
@@ -135,7 +58,7 @@
             Repair
           </h5>
         </div>
-        <div class="box active">
+        <div class="box">
           <div class="img-box">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
               <g id="paint-painted-paint_roller-home-house" data-name="paint-painted-paint roller-home-house">
@@ -162,403 +85,212 @@
     </div>
   </section>
 
-  <!-- end feature section -->
-
-  <!-- about section -->
-
-  <section class="about_section layout_padding-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-6">
-          <div class="detail-box">
-            <h2>
-              About us
-            </h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6">
-          <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end about section -->
-
-
-  <!-- professional section -->
-
-  <section class="professional_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/professional-img.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="detail-box">
-            <h2>
-              We Provide Professional <br>
-              Home Services.
-            </h2>
-            <p>
-              randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end professional section -->
-
-  <!-- service section -->
-
-  <section class="service_section layout_padding">
-    <div class="container ">
-      <div class="heading_container heading_center">
-        <h2> Our Services </h2>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s1.png" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Maintenance
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s2.png" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Electrical
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s3.png" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Plumbing
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- end service section -->
-
-  <!-- client section -->
-
-  <section class="client_section ">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          What Our Clients Say
-        </h2>
-      </div>
-      <div class="carousel-wrap layout_padding2-top ">
-        <div class="owl-carousel">
-          <div class="item">
-            <div class="box">
-              <div class="client_id">
-                <div class="img-box">
-                  <img src="images/client-1.jpg" alt="">
-                </div>
-                <div class="client_detail">
-                  <div class="client_info">
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </div>
-                  <i class="fa fa-quote-left" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="client_text">
+      <section className="about_section layout_padding-bottom">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-5 col-md-6">
+              <div className="detail-box">
+                <h2>About us</h2>
                 <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
+                  There are many variations of passages of Lorem Ipsum available,
+                  but the majority have suffered alteration in some form, by injected
+                  humour, or randomised. There are many variations of passages of
+                  Lorem Ipsum available, but the majority have suffered alteration in
+                  some form, by injected humour, or randomised.
                 </p>
+                <a href="">Read More</a>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="client_id">
-                <div class="img-box">
-                  <img src="images/client-2.jpg" alt="">
-                </div>
-                <div class="client_detail">
-                  <div class="client_info">
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </div>
-                  <i class="fa fa-quote-left" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="client_text">
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="client_id">
-                <div class="img-box">
-                  <img src="images/client-1.jpg" alt="">
-                </div>
-                <div class="client_detail">
-                  <div class="client_info">
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </div>
-                  <i class="fa fa-quote-left" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="client_text">
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="client_id">
-                <div class="img-box">
-                  <img src="images/client-2.jpg" alt="">
-                </div>
-                <div class="client_detail">
-                  <div class="client_info">
-                    <h6>
-                      Jorch morik
-                    </h6>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                  </div>
-                  <i class="fa fa-quote-left" aria-hidden="true"></i>
-                </div>
-              </div>
-              <div class="client_text">
-                <p>
-                  chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                </p>
+            <div className="col-lg-7 col-md-6">
+              <div className="img-box">
+                <img src={about} alt="About Us" />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- end client section -->
-
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
+      <section className="service_section layout_padding">
+        <div className="container">
+          <div className="heading_container heading_center">
+            <h2>Our Services</h2>
+          </div>
+          <div className="row">
+            <div className="col-sm-6 col-md-4 mx-auto">
+              <div className="box">
+                <div className="img-box">
+                  <img src={maintain} alt="Maintenance" />
+                </div>
+                <div className="detail-box">
+                  <h5>Maintenance</h5>
+                  <p>
+                    When looking at its layout, the point of using Lorem Ipsum is that it has a more-or-less normal
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
+            <div className="col-sm-6 col-md-4 mx-auto">
+              <div className="box">
+                <div className="img-box">
+                  <img src={eletrical} alt="Electrical" />
+                </div>
+                <div className="detail-box">
+                  <h5>Electrical</h5>
+                  <p>
+                    When looking at its layout, the point of using Lorem Ipsum is that it has a more-or-less normal
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap" style="width:100%;height:100%;"></div>
+            <div className="col-sm-6 col-md-4 mx-auto">
+              <div className="box">
+                <div className="img-box">
+                  <img src={plumbing} alt="Plumbing" />
+                </div>
+                <div className="detail-box">
+                  <h5>Plumbing</h5>
+                  <p>
+                    When looking at its layout, the point of using Lorem Ipsum is that it has a more-or-less normal
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+          <div className="btn-box">
+            <a href="">View More</a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- end contact section -->
-
-
-  <!-- info section -->
-  <section class="info_section ">
-    <div class="container">
-      <h4>
-        Get In Touch
-      </h4>
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <div class="info_items">
-            <div class="row">
-              <div class="col-md-4">
-                <a href="">
-                  <div class="item ">
-                    <div class="img-box ">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <section className="client_section">
+        <div className="container">
+          <div className="heading_container heading_center">
+            <h2>What Our Clients Say</h2>
+          </div>
+          <div className="carousel-wrap layout_padding2-top">
+            <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} controls={false}>
+              <Carousel.Item>
+                <Row>
+                  <Col md={6}>
+                    <div className="box">
+                      <div className="client_id">
+                        <div className="img-box">
+                          <img src={clint1} alt="Client 1" />
+                        </div>
+                        <div className="client_detail">
+                          <div className="client_info">
+                            <h6>Jorch Morik</h6>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                          <i className="fa fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="client_text">
+                        <p>
+                          Chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum.
+                        </p>
+                      </div>
                     </div>
-                    <p>
-                      Lorem Ipsum is simply dummy text
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="">
-                  <div class="item ">
-                    <div class="img-box ">
-                      <i class="fa fa-phone" aria-hidden="true"></i>
+                  </Col>
+                  <Col md={6}>
+                    <div className="box">
+                      <div className="client_id">
+                        <div className="img-box">
+                          <img src={client2} alt="Client 2" />
+                        </div>
+                        <div className="client_detail">
+                          <div className="client_info">
+                            <h6>Jorch Morik</h6>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                          <i className="fa fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="client_text">
+                        <p>
+                          Chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum.
+                        </p>
+                      </div>
                     </div>
-                    <p>
-                      +02 1234567890
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="">
-                  <div class="item ">
-                    <div class="img-box">
-                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </Col>
+                </Row>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Row>
+                  <Col md={6}>
+                    <div className="box">
+                      <div className="client_id">
+                        <div className="img-box">
+                          <img src={clint1} alt="Client 1" />
+                        </div>
+                        <div className="client_detail">
+                          <div className="client_info">
+                            <h6>Jorch Morik</h6>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                          <i className="fa fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="client_text">
+                        <p>
+                          Chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum.
+                        </p>
+                      </div>
                     </div>
-                    <p>
-                      demo@gmail.com
-                    </p>
-                  </div>
-                </a>
-              </div>
+                  </Col>
+                  <Col md={6}>
+                    <div className="box">
+                      <div className="client_id">
+                        <div className="img-box">
+                          <img src={client2} alt="Client 2" />
+                        </div>
+                        <div className="client_detail">
+                          <div className="client_info">
+                            <h6>Jorch Morik</h6>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                          </div>
+                          <i className="fa fa-quote-left" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="client_text">
+                        <p>
+                          Chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum.
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Carousel.Item>
+            </Carousel>
+            <div className="carousel-controls">
+              <Button variant="primary" onClick={() => handleSelect(index === 0 ? 1 : 0)}>
+                <i className="fa fa-arrow-left" aria-hidden="true"></i>
+              </Button>
+              <Button variant="primary" onClick={() => handleSelect(index === 1 ? 0 : 1)}>
+                <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              </Button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="social-box">
-      <h4>
-        Follow Us
-      </h4>
-      <div class="box">
-        <a href="">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
+      </section>
+    </>
+  );
+};
 
-
-
-  <!-- end info_section -->
-
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
-
-
-</body>
-
-</html>
+export default Home;
