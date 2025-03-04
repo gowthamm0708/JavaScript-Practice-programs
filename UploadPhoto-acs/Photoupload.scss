@@ -1,0 +1,83 @@
+.photo-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .photo-upload-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+
+.photo-upload-box {
+  position: relative;
+  width: 260px;
+  height: 120px;
+  background: linear-gradient(0deg, #078DEE -114.91%, rgba(13, 23, 39, 0.54) 100%);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0.67;
+  .user-icon {
+    margin-bottom: 5px;
+  }
+  .no-photo-text {
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+
+.default-content {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.default-content.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(0deg, #078DEE -114.91%, rgba(13, 23, 39, 0.54) 100%);
+  border-bottom: 1px solid #078DEE;
+  transition: box-shadow 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.gallery-icon, .camera-icon {
+  transform: translateX(-40px) rotate(45deg);
+  transition: all 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0) rotate(0);
+  }
+
+  &:hover {
+    background-color: #ffffff68;
+  }
+}
+
+.camera-icon {
+  transform: translateX(40px) rotate(45deg);
+  transition: all 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0) rotate(0);
+  }
+}
+}
