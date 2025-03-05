@@ -1,0 +1,48 @@
+.expandable-button {
+    width: 36px;
+    height: 36px;
+    background-color: #141C2F;
+    border: 2px solid #885111;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; // Align content to the left
+    padding: 0 8px;
+    gap: 8px; // Small gap between icon and text
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+    // box-shadow: 0 0 0 0 rgba(136, 81, 17, 0.3);
+  
+    .plus-icon {
+      width: 18px;
+      height: 24px;
+      stroke: #885111; // Initial orange icon color
+      transition: stroke 0.3s ease;
+    }
+  
+    .button-text {
+      opacity: 0;
+      color: #18212C;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+  
+    &:hover {
+      width: 139px;
+      background: #da923f;
+    //   box-shadow: 0 0 10px rgba(136, 81, 17, 0.5);
+  
+      .plus-icon {
+        stroke: #151313; // Change icon color to white
+      }
+  
+      .button-text {
+        opacity: 1;
+        color: #151313;
+      }
+    }
+  }
+  
