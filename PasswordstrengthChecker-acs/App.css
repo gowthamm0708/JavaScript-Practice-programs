@@ -1,0 +1,61 @@
+.password-container {
+  width: 300px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.password-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.strength-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.strength-indicator {
+  display: flex;
+}
+
+.box {
+  width: 53px;
+  height: 12px;
+  margin-right: 5px;
+  background-color: #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.strength-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.weak {
+  color: red;
+}
+
+.medium {
+  color: orange;
+}
+
+.strong {
+  color: green;
+}
